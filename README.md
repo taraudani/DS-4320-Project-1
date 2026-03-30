@@ -11,7 +11,7 @@ This README now documents a GFM-focused DS 4320 project and includes completed p
 
 **Press release** - 
 
-**Data** - 
+**Data** - [Link to data folder](https://myuva-my.sharepoint.com/:f:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data?csf=1&web=1&e=7KP18d)
 
 **Pipeline** - 
 
@@ -32,7 +32,7 @@ The motivation for this project comes from the gap between raw environmental mon
 
 ### Press Release Headline:
 
-The Flooding is in the Soil - How Albemarle County Environmental Data  Predicts Flooding 
+[LINK](The Flooding is in the Soil - How Albemarle County Environmental Data  Predicts Flooding)
 
 ## Domain Exposition
 
