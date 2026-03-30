@@ -48,6 +48,7 @@ try:
         SOIL_MOISTURE_MIN  = ('SOIL_MOISTURE', 'min')
     ).reset_index()
 
+    # creating parquet file for soil moisture
     soil_monthly.to_parquet('data/soil_moisture_monthly.parquet', index=False)
     log.info(f'soil_moisture: {len(soil_daily)} daily rows saved')
     print(f'Table 3 loaded: {len(soil_daily)} days of soil moisture data')
