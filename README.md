@@ -71,11 +71,11 @@ Four data sources were assembled to build the analytical dataset. The flood even
 ### Code:
 | File | Description | Link |
 |---|---|---|
-| climate_monthly| Describes the monthly mean/sum/max values of general climate variables such as temperature and precipitation | [Link]() |
-| drought_monitor| Monthly average index value for drought severity, ranging 0-5 (generally within 0-3) | [Link]() |
-| soil_moisture | Gives soil mosture mean value per month | [Link]() |
-| weather_events | The main predictive factor, which contains the occurrence of flooding by date and aggregates to number/occurrence by month in master sheet | [Link]() |
-| master | Contains all necessary variables from the above tables in one place for analysis | [Link]() |
+| climate_monthly| Describes the monthly mean/sum/max values of general climate variables such as temperature and precipitation | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/climate_monthly_code.md) |
+| drought_monitor| Monthly average index value for drought severity, ranging 0-5 (generally within 0-3) | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/drought_monitor_code.md) |
+| soil_moisture | Gives soil mosture mean value per month | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/soil_moisture_code.md) |
+| weather_events | The main predictive factor, which contains the occurrence of flooding by date and aggregates to number/occurrence by month in master sheet | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/weather_events_code.md) |
+| master | Contains all necessary variables from the above tables in one place for analysis | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/master_code.md) |
 
 ### Bias Identification:
 Several sources of bias are present in this dataset. The climate data comes from a single station at the Charlottesville airport, which may not fully represent conditions across all of Albemarle County, as airport microclimates tend to be slightly warmer and drier than surrounding rural and forested areas. The flood event records rely on reports from trained spotters, emergency managers, and automated systems, meaning smaller or more rural events may go unreported while high-damage events near populated areas are more likely to be recorded. The soil moisture data is derived from the ERA5 reanalysis model rather than direct measurement, so they reflect modeled rather than observed conditions and may smooth over localized saturation. The drought monitor classifications are produced by a panel of experts synthesizing multiple data sources and may introduce subjectivity and human error or misjudgement.
