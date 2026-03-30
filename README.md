@@ -52,7 +52,7 @@ The Flooding is in the Soil - How Albemarle County Environmental Data  Predicts 
 This project sits within the domain of hydrometeorological forecasting, which is a subfield of environmental data science that is concerned with predicting water-related weather events from atmospheric and land-surface conditions. The specific geographic focus is Albemarle County, Virginia, which drains into the Rivanna River. The county's topography, which is situated at the foot of the Blue Ridge Mountains, creates conditions where rainfall can quickly saturate small watersheds and produce flash flooding in low-lying areas of the county. The four data domains used in this project are daily climate, soil moisture, drought status, and flood event records, which are well-understood and correlated factors to flooding potential.
 
 ### Background Reading:
-
+ [Link to OneDrive Folder with Readings](https://myuva-my.sharepoint.com/:f:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Articles?csf=1&web=1&e=nx3uJs)
 
 ### Reading Summary:
 | # | Title | Description | Link |
@@ -78,7 +78,7 @@ Four data sources were assembled to build the analytical dataset. The flood even
 | master | Contains all necessary variables from the above tables in one place for analysis | [Link]() |
 
 ### Bias Identification:
-Several sources of bias are present in this dataset. The climate data comes from a single station at the Charlottesville airport, which may not fully represent conditions across all of Albemarle County, as airport microclimates tend to be slightly warmer and drier than surrounding rural and forested areas. The flood event records rely on reports from trained spotters, emergency managers, and automated systems, meaning smaller or more rural events may go unreported while high-damage events near populated areas are more likely to be recorded. The soil moisture data is derived from the ERA5 reanalysis model rather than direct measurement, so it reflects modeled rather than observed conditions and may smooth over localized saturation. The drought monitor classifications are produced by a panel of experts synthesizing multiple data sources and may introduce subjectivity and human error or misjudgement.
+Several sources of bias are present in this dataset. The climate data comes from a single station at the Charlottesville airport, which may not fully represent conditions across all of Albemarle County, as airport microclimates tend to be slightly warmer and drier than surrounding rural and forested areas. The flood event records rely on reports from trained spotters, emergency managers, and automated systems, meaning smaller or more rural events may go unreported while high-damage events near populated areas are more likely to be recorded. The soil moisture data is derived from the ERA5 reanalysis model rather than direct measurement, so they reflect modeled rather than observed conditions and may smooth over localized saturation. The drought monitor classifications are produced by a panel of experts synthesizing multiple data sources and may introduce subjectivity and human error or misjudgement.
 
 ### Bias Mitigation:
 Spatial bias from single-station climate measurement is partially addressed by acknowledging that the analysis represents conditions at or near the airport rather than uniformly across the county, and by supplementing with the county-wide drought monitor classifications. Reporting bias in the flood event data can be partially quantified by comparing monthly event counts to long-term regional averages and flagging anomalously low-count years. ERA5 soil moisture bias can be assessed by comparing modeled values against known high-precipitation events to verify that the model captures saturation conditions correctly. For all numerical features, uncertainty is quantified using standard deviation statistics reported in the data dictionary.
@@ -94,41 +94,37 @@ All data were aggregated to the monthly level to enable joining across four sour
 ### Data:
 | Table | Description | File |
 |---|---|---|
-| weather_events | NOAA flood and flash flood events in Albemarle County 2015-2024 | [weather_events.parquet](https://drive.google.com/file/d/12jQt7t-3Z2T3gl4B5FV8SlmJwGy7Sgf0/view?usp=sharing) |
-| climate_monthly | Monthly aggregated climate observations from Charlottesville airport | [climate_monthly.parquet](https://drive.google.com/file/d/1OCCg_2hQHnP6dR9GrAlyDUsK8DJ7pVuG/view?usp=sharing) |
-| soil_moisture | Daily ERA5 soil moisture at Albemarle centroid, aggregated to monthly | [soil_moisture.parquet](https://drive.google.com/file/d/1TbNqzSlqcG0rDsRYTKxIfYCaE7ddRR_o/view?usp=sharing) |
-| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [FIX](https://drive.google.com/file/d/1ZP_pw338wBuDv06sulk0sx5Og5TP-MLC/view?usp=sharing) |
-| master | Final joined analytical table used for modeling | [FIX](data/master.parquet) |
+| weather_events | NOAA flood and flash flood events in Albemarle County 2015-2024 | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/weather_events.parquet?csf=1&web=1&e=61T6Cm) |
+| climate_monthly | Monthly aggregated climate observations from Charlottesville airport | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/climate_monthly.parquet?csf=1&web=1&e=SudKug) |
+| soil_moisture | Daily ERA5 soil moisture at Albemarle centroid, aggregated to monthly | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/soil_moisture_monthly.parquet?csf=1&web=1&e=aI6BCt) |
+| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [Link]((https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/drought_monitor.parquet?csf=1&web=1&e=GZIgqv)) |
+| master | Final joined analytical table used for modeling | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/master.parquet?csf=1&web=1&e=NwGVbj)) |
 
 ### Data Dictionary:
-| Table | Feature | Type | Description | Example |
-|---|---|---|---|---|
-| weather_events | `EVENT_ID` | int | Unique NOAA Storm Events identifier | 594741 |
-| weather_events | `EVENT_TYPE` | str | Flood classification (Flood or Flash Flood) | Flash Flood |
-| weather_events | `BEGIN_DATE` | date | Date the event began | 2018-07-22 |
-| weather_events | `YEAR` | int | Calendar year extracted from BEGIN_DATE | 2018 |
-| weather_events | `MONTH` | int | Calendar month extracted from BEGIN_DATE | 7 |
-| climate_monthly | `YEAR` | int | Calendar year | 2020 |
-| climate_monthly | `MONTH` | int | Calendar month | 6 |
-| climate_monthly | `TMAX_MEAN` | float | Mean monthly high temperature (°F) | 84.2 |
-| climate_monthly | `TMIN_MEAN` | float | Mean monthly low temperature (°F) | 61.3 |
-| climate_monthly | `PRCP_TOTAL` | float | Total monthly precipitation (inches) | 4.72 |
-| climate_monthly | `PRCP_MAX` | float | Largest single-day precipitation total in the month (inches) | 2.10 |
-| climate_monthly | `HEAVY_RAIN_DAYS` | int | Days in the month with precipitation exceeding 1.0 inch | 3 |
-| climate_monthly | `SNOW_TOTAL` | float | Total monthly snowfall (inches) | 3.5 |
-| climate_monthly | `WIND_MAX` | float | Maximum 5-second wind gust in the month (mph) | 43.0 |
-| soil_moisture | `YEAR` | int | Calendar year | 2020 |
-| soil_moisture | `MONTH` | int | Calendar month | 6 |
-| soil_moisture | `SOIL_MOISTURE_MEAN` | float | Mean daily volumetric soil moisture 0–7cm depth for the month (m³/m³) | 0.283 |
-| soil_moisture | `SOIL_MOISTURE_MAX` | float | Maximum daily soil moisture 0–7cm depth in the month (m³/m³) | 0.312 |
-| soil_moisture | `SOIL_MOISTURE_MIN` | float | Minimum daily soil moisture 0–7cm depth in the month (m³/m³) | 0.255 |
-| drought_monitor | `YEAR` | int | Calendar year | 2022 |
-| drought_monitor | `MONTH` | int | Calendar month | 8 |
-| drought_monitor | `DROUGHT_INDEX` | float | Monthly mean weighted drought severity (0–5 scale). 0 = no drought; 5 = entire county in exceptional drought. Derived from US Drought Monitor D0–D4 classifications. | 1.24 |
-| master | `FLOOD_COUNT` | int | Number of NOAA flood/flash flood events in Albemarle County that month | 5 |
-| master | `HAD_FLOOD` | int | Binary target variable: 1 if at least one flood event occurred that month, 0 otherwise. 38 of 120 months (31.7%) are positive. | 1 |
-| master | `*_LAG1 columns` | float | Prior-month values of PRCP_TOTAL, PRCP_MAX, SOIL_MOISTURE_MEAN, SOIL_MOISTURE_MAX, and DROUGHT_INDEX. Used as model features to prevent data leakage. | PRCP_TOTAL_LAG1 = 3.21 |
-
-### Uncertainty Quantification:
-
-
+| Table | Feature | Type | Description | Example | Uncertainty |
+|---|---|---|---|---|---|
+| weather_events | `EVENT_ID` | int | Unique NOAA Storm Events identifier | 594741 | None — administrative primary key |
+| weather_events | `EVENT_TYPE` | str | Flood classification (Flood or Flash Flood) | Flash Flood | Classification depends on NWS reporter judgment |
+| weather_events | `BEGIN_DATE` | date | Date the event began | 2018-07-22 | Small events may be reported with a delay of hours to days |
+| weather_events | `YEAR` | int | Calendar year extracted from BEGIN_DATE | 2018 | None — derived from BEGIN_DATE |
+| weather_events | `MONTH` | int | Calendar month extracted from BEGIN_DATE | 7 | None — derived from BEGIN_DATE |
+| climate_monthly | `YEAR` | int | Calendar year | 2020 | None |
+| climate_monthly | `MONTH` | int | Calendar month | 6 | None |
+| climate_monthly | `TMAX_MEAN` | float | Mean monthly high temperature (°F) | 84.2 | ±0.5°F station error; single station may not represent full county |
+| climate_monthly | `TMIN_MEAN` | float | Mean monthly low temperature (°F) | 61.3 | ±0.5°F station error; single station may not represent full county |
+| climate_monthly | `PRCP_TOTAL` | float | Total monthly precipitation (inches) | 4.72 | ±0.01in gauge error; airport may underrepresent western county orographic rainfall |
+| climate_monthly | `PRCP_MAX` | float | Largest single-day precipitation total in the month (inches) | 2.10 | ±0.01in gauge error; point measurement may miss localized convective maxima |
+| climate_monthly | `HEAVY_RAIN_DAYS` | int | Days in the month with precipitation exceeding 1.0 inch | 3 | Threshold of 1.0 inch is operationally common but somewhat arbitrary |
+| climate_monthly | `SNOW_TOTAL` | float | Total monthly snowfall (inches) | 3.5 | ±0.1in observer error; snowfall is spatially variable across the county |
+| climate_monthly | `WIND_MAX` | float | Maximum 5-second wind gust in the month (mph) | 43.0 | ±1mph anemometer error; airport may not capture terrain-channeled gusts |
+| soil_moisture | `YEAR` | int | Calendar year | 2020 | None |
+| soil_moisture | `MONTH` | int | Calendar month | 6 | None |
+| soil_moisture | `SOIL_MOISTURE_MEAN` | float | Mean daily volumetric soil moisture 0–7cm depth for the month (m³/m³) | 0.283 | ±0.04 m³/m³ ERA5 model RMSE; reanalysis may smooth localized saturation events |
+| soil_moisture | `SOIL_MOISTURE_MAX` | float | Maximum daily soil moisture 0–7cm depth in the month (m³/m³) | 0.312 | ±0.04 m³/m³ ERA5 model RMSE; peak values may be underestimated by smoothing |
+| soil_moisture | `SOIL_MOISTURE_MIN` | float | Minimum daily soil moisture 0–7cm depth in the month (m³/m³) | 0.255 | ±0.04 m³/m³ ERA5 model RMSE |
+| drought_monitor | `YEAR` | int | Calendar year | 2022 | None |
+| drought_monitor | `MONTH` | int | Calendar month | 8 | None |
+| drought_monitor | `DROUGHT_INDEX` | float | Monthly mean weighted drought severity (0–5 scale). 0 = no drought; 5 = entire county in exceptional drought. Derived from US Drought Monitor D0–D4 classifications. | 1.24 | ±~0.5 index units due to expert panel subjectivity in weekly D-level classifications |
+| master | `FLOOD_COUNT` | int | Number of NOAA flood/flash flood events in Albemarle County that month | 5 | Subject to reporting bias; rural or nighttime events may go unrecorded |
+| master | `HAD_FLOOD` | int | Binary target variable: 1 if at least one flood event occurred that month, 0 otherwise. 38 of 120 months (31.7%) are positive. | 1 | Inherits reporting bias from FLOOD_COUNT |
+| master | `*_LAG1 columns` | float | Prior-month values of PRCP_TOTAL, PRCP_MAX, SOIL_MOISTURE_MEAN, SOIL_MOISTURE_MAX, and DROUGHT_INDEX. Used as model features to prevent data leakage. | PRCP_TOTAL_LAG1 = 3.21 | Inherits from source feature |
