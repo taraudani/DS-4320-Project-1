@@ -1,7 +1,7 @@
 # DS-4320-Project-1: Forecasting Monthly Flooding
 
 ### Executive Summary 
-This README now documents a GFM-focused DS 4320 project and includes completed project metadata (name, NetID, DOI, links, and license) plus a summary table for quick reference. It also contains a defined problem statement, rationale, references with footnotes, a terminology table, callout examples, and code highlighting examples to demonstrate practical GitHub Flavored Markdown usage.
+This repository contains the data, pipeline, and analysis for a machine learning project predicting flood events in Albemarle County, Virginia. Using four publicly available data sources on drought, soil moisture, precipitation conditions, and extreme weather events, a monthly dataset spanning 2015 through 2025 was assembled and stored using the relational model. A random forest classifier was trained on prior-month environmental conditions to predict whether a flood event would occur in Albemarle County in the following month, with soil moisture and precipitation emerging as the strongest predictors. All data is stored in parquet format and queryable via DuckDB, and the full pipeline from raw data ingestion through modeling and visualization is documented in the pipeline notebook.
 
 **Name** - Tara Udani
 
@@ -9,13 +9,13 @@ This README now documents a GFM-focused DS 4320 project and includes completed p
 
 **DOI** - 
 
-**Press release** - 
+**Press release** - [Link to Press Release](https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/press_release.md)
 
 **Data** - [Link to data folder](https://myuva-my.sharepoint.com/:f:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data?csf=1&web=1&e=7KP18d)
 
-**Pipeline** - 
+**Pipeline** - [Link to Pipeline Folder](https://github.com/taraudani/DS-4320-Project-1/tree/150f699b33bb813ba595ab1f8b79c02962994255/pipeline)
 
-**License** - 
+**License** - [Link to License](https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/LICENSE)
 
 ## Problem Definition
 
@@ -32,7 +32,7 @@ The motivation for this project comes from the gap between raw environmental mon
 
 ### Press Release Headline:
 
-[LINK](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
+[https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/press_release.md](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
 
 ## Domain Exposition
 
@@ -75,7 +75,7 @@ Four data sources were assembled to build the analytical dataset. The flood even
 | drought_monitor| Monthly average index value for drought severity, ranging 0-5 (generally within 0-3) | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/drought_monitor_code.md) |
 | soil_moisture | Gives soil mosture mean value per month | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/soil_moisture_code.md) |
 | weather_events | The main predictive factor, which contains the occurrence of flooding by date and aggregates to number/occurrence by month in master sheet | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/weather_events_code.md) |
-| master | Contains all necessary variables from the above tables in one place for analysis | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/master_code.md) |
+| master | Contains all necessary variables from the above tables in one place for analysis, including DuckDB code used to query the relational database | [Link](https://github.com/taraudani/DS-4320-Project-1/blob/a5599e7a1256e62b5a2c18ecf4ba0f8fd3ac6bd8/data%20code/master_code.md) |
 
 ### Bias Identification:
 Several sources of bias are present in this dataset. The climate data comes from a single station at the Charlottesville airport, which may not fully represent conditions across all of Albemarle County, as airport microclimates tend to be slightly warmer and drier than surrounding rural and forested areas. The flood event records rely on reports from trained spotters, emergency managers, and automated systems, meaning smaller or more rural events may go unreported while high-damage events near populated areas are more likely to be recorded. The soil moisture data is derived from the ERA5 reanalysis model rather than direct measurement, so they reflect modeled rather than observed conditions and may smooth over localized saturation. The drought monitor classifications are produced by a panel of experts synthesizing multiple data sources and may introduce subjectivity and human error or misjudgement.
