@@ -15,7 +15,7 @@ This repository contains the data, pipeline, and analysis for a machine learning
 
 **Pipeline** - [Link to Pipeline Folder](https://github.com/taraudani/DS-4320-Project-1/tree/150f699b33bb813ba595ab1f8b79c02962994255/pipeline)
 
-**License** - [Link to License](https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/LICENSE)
+**License** - [MIT License](https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/LICENSE)
 
 ## Problem Definition
 
