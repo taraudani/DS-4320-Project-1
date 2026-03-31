@@ -32,7 +32,7 @@ The motivation for this project comes from the gap between raw environmental mon
 
 ### Press Release Headline:
 
-[LINK](The Flooding is in the Soil - How Albemarle County Environmental Data  Predicts Flooding)
+[LINK](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
 
 ## Domain Exposition
 
