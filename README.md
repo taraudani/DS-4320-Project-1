@@ -1,4 +1,4 @@
-# DS-4320-Project-1: Forecasting Monthly Flooding
+# DS 4320 Project 1: Forecasting Monthly Flooding
 
 ### Executive Summary 
 This repository contains the data, pipeline, and analysis for a machine learning project predicting flood events in Albemarle County, Virginia. Using four publicly available data sources on drought, soil moisture, precipitation conditions, and extreme weather events, a monthly dataset spanning 2015 through 2025 was assembled and stored using the relational model. A random forest classifier was trained on prior-month environmental conditions to predict whether a flood event would occur in Albemarle County in the following month, with soil moisture and precipitation emerging as the strongest predictors. All data is stored in parquet format and queryable via DuckDB, and the full pipeline from raw data ingestion through modeling and visualization is documented in the pipeline notebook.
