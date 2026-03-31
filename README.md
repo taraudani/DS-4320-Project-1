@@ -7,7 +7,7 @@ This repository contains the data, pipeline, and analysis for a machine learning
 
 **NetID** - hav7tz
 
-**DOI** - 
+**DOI** - [![DOI](https://zenodo.org/badge/1194739145.svg)](https://doi.org/10.5281/zenodo.19359764)
 
 **Press release** - [Link to Press Release](https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/press_release.md)
 
@@ -31,8 +31,7 @@ Narrowing from the broad problem of extreme weather forecasting down to flooding
 The motivation for this project comes from the gap between raw environmental monitoring data and actionable flood forecasts at the local county level. Albemarle County has experienced 143 flood and flash flood events between 2015 and 2024, including 41 events in 2018 and 31 in 2020 alone, yet most residents and local planners still rely on the National Weather Service alerts, which provide just hours of warning. By building a monthly-scale predictive model that is grounded in historical patterns of environmental conditions, this project creates a predictive scale that allows citizens to be warned of potential flooding weeks in advance.  The result is a framework that any similarly monitored county could apply to improve its seasonal flood preparedness.
 
 ### Press Release Headline:
-
-[https://github.com/taraudani/DS-4320-Project-1/blob150f699b33bb813ba595ab1f8b79c02962994255/press_release.md](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
+[The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding](https://github.com/taraudani/DS-4320-Project-1/blob/bf8d3c5e2a2b729a2858000829b5a690c6417128/press_release.md)
 
 ## Domain Exposition
 
@@ -97,8 +96,8 @@ All data were aggregated to the monthly level to enable joining across four sour
 | weather_events | NOAA flood and flash flood events in Albemarle County 2015-2024 | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/weather_events.parquet?csf=1&web=1&e=61T6Cm) |
 | climate_monthly | Monthly aggregated climate observations from Charlottesville airport | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/climate_monthly.parquet?csf=1&web=1&e=SudKug) |
 | soil_moisture | Daily ERA5 soil moisture at Albemarle centroid, aggregated to monthly | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/soil_moisture_monthly.parquet?csf=1&web=1&e=aI6BCt) |
-| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [Link]((https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/drought_monitor.parquet?csf=1&web=1&e=GZIgqv)) |
-| master | Final joined analytical table used for modeling | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/master.parquet?csf=1&web=1&e=NwGVbj)) |
+| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/drought_monitor.parquet?csf=1&web=1&e=GZIgqv) |
+| master | Final joined analytical table used for modeling | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/master.parquet?csf=1&web=1&e=NwGVbj) |
 
 ### Data Dictionary:
 | Table | Feature | Type | Description | Example | Uncertainty |
