@@ -32,7 +32,7 @@ The motivation for this project comes from the gap between raw environmental mon
 
 ### Press Release Headline:
 
-[https://github.com/taraudani/DS-4320-Project-1/blob/150f699b33bb813ba595ab1f8b79c02962994255/press_release.md](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
+[https://github.com/taraudani/DS-4320-Project-1/blob150f699b33bb813ba595ab1f8b79c02962994255/press_release.md](The Flood Risk is Written in the Soil - How Albemarle County Environmental Data Predicts Flooding)
 
 ## Domain Exposition
 
