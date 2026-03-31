@@ -93,11 +93,12 @@ All data were aggregated to the monthly level to enable joining across four sour
 ### Data:
 | Table | Description | File |
 |---|---|---|
-| weather_events | NOAA flood and flash flood events in Albemarle County 2015-2024 | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/weather_events.parquet?csf=1&web=1&e=61T6Cm) |
-| climate_monthly | Monthly aggregated climate observations from Charlottesville airport | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/climate_monthly.parquet?csf=1&web=1&e=SudKug) |
-| soil_moisture | Daily ERA5 soil moisture at Albemarle centroid, aggregated to monthly | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/soil_moisture_monthly.parquet?csf=1&web=1&e=aI6BCt) |
-| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/drought_monitor.parquet?csf=1&web=1&e=GZIgqv) |
-| master | Final joined analytical table used for modeling | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data%20(parquet)/master.parquet?csf=1&web=1&e=NwGVbj) |
+| weather_events | NOAA flood and flash flood events in Albemarle County 2015-2024 | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/weather_events.parquet?csf=1&web=1&e=Iya50V) |
+| climate_monthly | Monthly aggregated climate observations from Charlottesville airport | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/climate_monthly.parquet?csf=1&web=1&e=SfIGzO) |
+| soil_moisture_monthly | Daily ERA5 soil moisture at Albemarle centroid, aggregated to monthly | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/soil_moisture_monthly.parquet?csf=1&web=1&e=fp3eGb) |
+| soil_moisture_daily | Daily ERA5 soil moisture at Albemarle centroid, used in monthly aggregation | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/soil_moisture_daily.parquet?csf=1&web=1&e=KbumeD) |
+| drought_monitor | Weekly US Drought Monitor classifications for Albemarle County | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/drought_monitor.parquet?csf=1&web=1&e=3GFxEu) |
+| master | Final joined analytical table used for modeling | [Link](https://myuva-my.sharepoint.com/:u:/r/personal/hav7tz_virginia_edu/Documents/DS%204320%20Project%201/Data/Data%20(parquet)/master.parquet?csf=1&web=1&e=LYcRix) |
 
 ### Data Dictionary:
 | Table | Feature | Type | Description | Example | Uncertainty |
