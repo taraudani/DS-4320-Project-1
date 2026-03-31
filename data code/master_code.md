@@ -4,6 +4,7 @@ import numpy as np
 import requests
 import os
 import logging
+import duckdb
 
 #building a complete monthly calendar so every month appears even with no flood
 
@@ -46,4 +47,18 @@ try:
 except Exception as e:
     log.error(f'master build failed: {e}')
     raise
+
+#connect to in-memory DuckDB database
+con = duckdb.connect()
+
+#load all parquet files directly into DuckDB tables
+con.execute("CREATE TABLE weather_events  AS SELECT * FROM read_parquet('data/weather_events.parquet')")
+con.execute("CREATE TABLE climate_monthly AS SELECT * FROM read_parquet('data/climate_monthly.parquet')")
+con.execute("CREATE TABLE soil_moisture   AS SELECT * FROM read_parquet('data/soil_moisture_monthly.parquet')")
+con.execute("CREATE TABLE drought_monitor AS SELECT * FROM read_parquet('data/drought_monitor.parquet')")
+con.execute("CREATE TABLE master          AS SELECT * FROM read_parquet('data/master.parquet')")
+
+#confirming all tables loaded
+print('Tables loaded into DuckDB:')
+print(con.execute("SHOW TABLES").df().to_string(index=False))
 ```
